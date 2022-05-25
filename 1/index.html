@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>puzzle</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body style="background-color: #666;">
+<div id="box" style="width:800px; ">
+<img src="./틀.png" style="width:790px;">
+<img src="./1.png" class="조각 ui-draggable ui-draggable-handle" id="조각1" style="position: relative; left: 644px; top: -510px;">
+<img src="./2.png" class="조각 ui-draggable ui-draggable-handle" id="조각2" style="position: relative; left: 651px; top: -495px;">
+<img src="./3.png" class="조각 ui-draggable ui-draggable-handle" id="조각3" style="position: relative; left: -150px; top: -536px; height: 40px; width: 182px;">
+<img src="./4.png" class="조각 ui-draggable ui-draggable-handle" id="조각4" style="position: relative; left: -228px; top: -433px;">
+<img src="./5.png" class="조각 ui-draggable ui-draggable-handle" id="조각5" style="position: relative; left: -447px; top: -420px;">
+<img src="./6.png" class="조각 ui-draggable ui-draggable-handle" id="조각6" style="position: relative; left: -408px; top: -488px;">
+<img src="./7.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: 32px; top: -953px;">
+<img src="./8.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: -90px; top: -1018px; height: 40px; width: 215px;">
+<img src="./9.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: -210px; top: -1130px; height: 240px; width: 43px;">
+<img src="./10.png" class="조각 ui-draggable ui-draggable-handle" id="조각10" style="position: relative; left: -465px; top: -971px;">
+<img src="./11.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: 151px; top: -1096px;">
+<img src="./12.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: 757px; top: -1186px;">
+<img src="./13.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: -204px; top: -1372px;">
+<img src="./14.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: 546px; top: -1514px; width: 102px; height: 68px;">
+<img src="./15.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: 275px; top: -1074px; height: 66px; width: 215px;">
+<img src="./16.png" class="조각 ui-draggable ui-draggable-handle" id="조각7" style="position: relative; left: -625px; top: -1639px;">
+
+</div>
+
+</div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script  src="./script.js"></script>
+<script>
+    $( '.조각').draggable();
+</script>
+<style>
+  #box{
+    position: relative;
+    margin-left: 20%;
+}
+
+#조각10{clip-path: polygon(0% 57%, 0% 57%, 1% 48%, 1% 48%, 3% 40%, 3% 40%, 6% 33%, 6% 33%, 10% 27%, 10% 27%, 15% 21%, 15% 21%, 21% 16%, 21% 16%, 23% 15%, 23% 15%, 23% 66%, 23% 66%, 76% 66%, 76% 66%, 76% 0%, 76% 0%, 86% 0%, 86% 0%, 93% 1%, 93% 1%, 98% 3%, 98% 3%, 100% 5%, 100% 6%, 100% 76%, 100% 76%, 25% 76%, 25% 76%, 25% 100%, 25% 100%, 18% 96%, 18% 96%, 12% 90%, 12% 90%, 7% 84%, 7% 84%, 3% 76%, 3% 76%, 0% 69%, 0% 69%, 0% 63%, 0% 63%);}
+
+
+</style>
+</body>
+</html>
