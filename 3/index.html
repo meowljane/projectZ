@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+
+    <body style="background-color: black;">
+        <div class="book"></div>
+        
+        <div class="틀"></div>
+
+    <div class="box" id="red1"></div>
+    <div class="box move" id="red2"></div>
+    <div class="box" id="orange1"></div>
+    <div class="box move" id="orange2"></div>
+    <div class="box" id="yellow1"></div>
+    <div class="box move" id="yellow2"></div>
+    <div class="box" id="green1"></div>
+    <div class="box move" id="green2"></div>
+    <div class="box" id="blue1"></div>
+    <div class="box move" id="blue2"></div>
+    <div class="box" id="purple1"></div>
+    <div class="box move" id="purple2"></div>
+    
+    <svg height="1000" width="1000">
+      <line class="line" id="line" x1="0" y1="0" x2="100" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+      <line class="line" id="line2" x1="0" y1="0" x2="200" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+      <line class="line" id="line3" x1="0" y1="0" x2="200" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+      <line class="line" id="line4" x1="0" y1="0" x2="200" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+      <line class="line" id="line5" x1="0" y1="0" x2="200" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+      <line class="line" id="line6" x1="0" y1="0" x2="200" y2="200" style="stroke: black; stroke-width:6; position:absolute" />
+    </svg>
+    
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</body>
+
+<style>
+.move{background-image: url('바늘.png');}
+
+    .book{
+        background-image: url('줄잇기.png');
+        width: 700px;
+        height : 500px;
+    position: absolute;
+    z-index: -1;
+    }
+
+    .틀{
+        background-image: url('틀.png');
+        width: 700px;
+        height : 500px;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    }
+
+    .line{z-index: 5;}
+
+#red1 {
+ left: 498px; top: 312px;
+ border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#red2 {
+    left: 564px;
+    top: 285px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('1.png');
+  position: absolute;
+}
+
+#orange1 {
+    left: 540px;
+    top: 343px;
+    border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#orange2 {
+    left: 580px;
+    top: 345px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('2.png');
+  position: absolute;
+}
+
+
+#yellow1 {
+
+    left: 500px;
+    top: 372px;
+
+    border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#yellow2 {
+    left: 570px;
+    top: 378px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('3.png');
+  position: absolute;
+}
+
+
+#green1 {
+    left: 500px;
+    top: 343px;
+    border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#green2 {
+    left: 574px;
+    top: 313px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('4.png');
+  position: absolute;
+}
+
+
+
+#blue1 {
+    left: 441px;
+    top: 408px;
+    border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#blue2 {
+    left: 446px;
+    top: 445px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('5.png');
+  position: absolute;
+}
+
+
+#purple1 {
+    left: 293px;
+    top: 418px;
+    border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+#purple2 {
+    left: 283px;
+    top: 456px;
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  background-image: url('6.png');
+  position: absolute;
+}
+
+</style>
+<script>
+    const $r1 = $("#red1");
+const $r2 = $("#red2");
+const $line = $("#line");
+const padding = 7;
+const coordinates = function() {
+  const x1 = $r1.offset().left + $r1.width()/2-padding;
+  const y1 = $r1.offset().top + $r1.height()/2-padding;
+  const x2 = $r2.offset().left + $r1.width()/2+7-padding;
+  const y2 = $r2.offset().top + $r1.height()/2+7-padding;
+
+  $line.attr("x1", x1);
+  $line.attr("y1", y1);
+  $line.attr("x2", x2);
+  $line.attr("y2", y2);
+}
+coordinates();
+
+const $o1 = $("#orange1");
+const $o2 = $("#orange2");
+const $line2 = $("#line2");
+const coordinatestwo = function() {
+  const x1 = $o1.offset().left + $o1.width()/2-padding;
+  const y1 = $o1.offset().top + $o1.height()/2-padding;
+  const x2 = $o2.offset().left + $o1.width()/2+7-padding;
+  const y2 = $o2.offset().top + $o1.height()/2+7-padding;
+
+  $line2.attr("x1", x1);
+  $line2.attr("y1", y1);
+  $line2.attr("x2", x2);
+  $line2.attr("y2", y2);
+}
+coordinatestwo();
+
+const $y1 = $("#yellow1");
+const $y2 = $("#yellow2");
+const $line3 = $("#line3");
+const coordinatesthree = function() {
+  const x1 = $y1.offset().left + $y1.width()/2-padding;
+  const y1 = $y1.offset().top + $y1.height()/2-padding;
+  const x2 = $y2.offset().left + $y1.width()/2+7-padding;
+  const y2 = $y2.offset().top + $y1.height()/2+7-padding;
+
+  $line3.attr("x1", x1);
+  $line3.attr("y1", y1);
+  $line3.attr("x2", x2);
+  $line3.attr("y2", y2);
+}
+coordinatesthree();
+
+
+const $g1 = $("#green1");
+const $g2 = $("#green2");
+const $line4 = $("#line4");
+const coordinatesfour = function() {
+  const x1 = $g1.offset().left + $g1.width()/2-padding;
+  const y1 = $g1.offset().top + $g1.height()/2-padding;
+  const x2 = $g2.offset().left + $g1.width()/2+7-padding;
+  const y2 = $g2.offset().top + $g1.height()/2+7-padding;
+
+  $line4.attr("x1", x1);
+  $line4.attr("y1", y1);
+  $line4.attr("x2", x2);
+  $line4.attr("y2", y2);
+}
+coordinatesfour();
+
+
+const $b1 = $("#blue1");
+const $b2 = $("#blue2");
+const $line5 = $("#line5");
+const coordinatesfive = function() {
+  const x1 = $b1.offset().left + $b1.width()/2-padding;
+  const y1 = $b1.offset().top + $b1.height()/2-padding;
+  const x2 = $b2.offset().left + $b1.width()/2+7-padding;
+  const y2 = $b2.offset().top + $b1.height()/2+7-padding;
+
+  $line5.attr("x1", x1);
+  $line5.attr("y1", y1);
+  $line5.attr("x2", x2);
+  $line5.attr("y2", y2);
+}
+coordinatesfive();
+
+const $p1 = $("#purple1");
+const $p2 = $("#purple2");
+const $line6 = $("#line6");
+const coordinatessix = function() {
+  const x1 = $p1.offset().left + $p1.width()/2-padding;
+  const y1 = $p1.offset().top + $p1.height()/2-padding;
+  const x2 = $p2.offset().left + $p1.width()/2+7-padding;
+  const y2 = $p2.offset().top + $p1.height()/2+7-padding;
+
+  $line6.attr("x1", x1);
+  $line6.attr("y1", y1);
+  $line6.attr("x2", x2);
+  $line6.attr("y2", y2);
+}
+coordinatessix();
+
+
+
+$('#red2').draggable({
+  drag: coordinates
+});
+
+$('#orange2').draggable({
+  drag: coordinatestwo
+});
+
+$('#yellow2').draggable({
+  drag: coordinatesthree
+});
+
+
+$('#green2').draggable({
+  drag: coordinatesfour
+});
+
+
+$('#blue2').draggable({
+  drag: coordinatesfive
+});
+
+
+$('#purple2').draggable({
+  drag: coordinatessix
+});
+</script>
+</html>
