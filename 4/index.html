@@ -81,58 +81,6 @@ const $r2 = $("#red2");
 const $line = $("#line");
 
 
-const $o1 = $("#orange1");
-const $o2 = $("#orange2");
-const $line2 = $("#line2");
-const coordinatestwo = function() {
-  const x1 = $o1.offset().left + $o1.width()/2-padding;
-  const y1 = $o1.offset().top + $o1.height()/2-padding;
-  const x2 = $o2.offset().left + $o1.width()/2-padding;
-  const y2 = $o2.offset().top + $o1.height()/2-padding;
-
-  $line2.attr("x1", x1);
-  $line2.attr("y1", y1);
-  $line2.attr("x2", x2);
-  $line2.attr("y2", y2);
-}
-coordinatestwo();
-
-const $y1 = $("#yellow1");
-const $y2 = $("#yellow2");
-const $line3 = $("#line3");
-const coordinatesthree = function() {
-  const x1 = $y1.offset().left + $y1.width()/2-padding;
-  const y1 = $y1.offset().top + $y1.height()/2-padding;
-  const x2 = $y2.offset().left + $y1.width()/2;
-  const y2 = $y2.offset().top + $y1.height()/2;
-
-  $line3.attr("x1", x1);
-  $line3.attr("y1", y1);
-  $line3.attr("x2", x2);
-  $line3.attr("y2", y2);
-}
-coordinatesthree();
-
-
-const $g1 = $("#green1");
-const $g2 = $("#green2");
-const $line4 = $("#line4");
-const coordinatesfour = function() {
-  const x1 = $g1.offset().left + $g1.width()/2-padding;
-  const y1 = $g1.offset().top + $g1.height()/2-padding;
-  const x2 = $g2.offset().left + $g1.width()/2;
-  const y2 = $g2.offset().top + $g1.height()/2;
-
-  $line4.attr("x1", x1);
-  $line4.attr("y1", y1);
-  $line4.attr("x2", x2);
-  $line4.attr("y2", y2);
-}
-coordinatesfour();
-
-
-
-
 
 
 
