@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html>
+
+    <body style="background-color: black;">
+        <div class="book"></div>
+        
+        <div class="틀"></div>
+
+    <div class="box" id="red1"></div>
+    <div class="box move" id="red2"></div>
+    <div class="box" id="orange1"></div>
+    <div class="box move" id="orange2"></div>
+    <div class="box" id="yellow1"></div>
+    <div class="box move" id="yellow2"></div>
+    <div class="box" id="green1"></div>
+    <div class="box move" id="green2"></div>
+
+    
+    <svg height="1000" width="1000">
+      <line class="line" id="line" x1="0" y1="0" x2="100" y2="200" style="position:absolute" />
+      <line class="line" id="line2" x1="0" y1="0" x2="200" y2="200" style="position:absolute" />
+      <line class="line" id="line3" x1="0" y1="0" x2="200" y2="200" style="position:absolute" />
+      <line class="line" id="line4" x1="0" y1="0" x2="200" y2="200" style="position:absolute" />
+</svg>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+    <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+    <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+    <script src="./domarrow.js"></script>
+    <link rel="stylesheet" href="./domarrow.css">
+
+</body>
+
+<style>
+
+.box{
+
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+}
+
+.move{
+position: inherit;
+  border-radius: 50px;
+  width: 25px;
+  height: 25px;
+}
+
+    .book{
+        background-image: url('줄잇기.png');
+        background-size: cover;
+        width: 700px;
+        height : 500px;
+    position: absolute;
+    z-index: -1;
+    }
+
+
+    .line{z-index: 5;
+      stroke: rgb(184,223,218);
+    stroke-width: 17px;
+    stroke-linecap: round;}
+
+#red1 {
+  left: 367px;
+    top: 260px;
+    position: absolute;
+}
+
+#red2 {
+  left: 367px;
+    top: 260px;
+    position: absolute;
+}
+
+#orange1 {
+    left: 540px;
+    top: 343px;
+  position: absolute;
+}
+
+#orange2 {
+    left: 580px;
+    top: 345px;
+  position: absolute;
+}
+
+
+#yellow1 {
+
+    left: 500px;
+    top: 372px;
+  position: absolute;
+}
+
+#yellow2 {
+    left: 570px;
+    top: 378px;
+  position: absolute;
+}
+
+
+#green1 {
+    left: 500px;
+    top: 343px;
+  position: absolute;
+}
+
+#green2 {
+    left: 574px;
+    top: 313px;
+  position: absolute;
+}
+
+
+</style>
+<script>
+
+const padding = 7;
+
+const $r1 = $("#red1");
+const $r2 = $("#red2");
+const $line = $("#line");
+
+
+const $o1 = $("#orange1");
+const $o2 = $("#orange2");
+const $line2 = $("#line2");
+const coordinatestwo = function() {
+  const x1 = $o1.offset().left + $o1.width()/2-padding;
+  const y1 = $o1.offset().top + $o1.height()/2-padding;
+  const x2 = $o2.offset().left + $o1.width()/2-padding;
+  const y2 = $o2.offset().top + $o1.height()/2-padding;
+
+  $line2.attr("x1", x1);
+  $line2.attr("y1", y1);
+  $line2.attr("x2", x2);
+  $line2.attr("y2", y2);
+}
+coordinatestwo();
+
+const $y1 = $("#yellow1");
+const $y2 = $("#yellow2");
+const $line3 = $("#line3");
+const coordinatesthree = function() {
+  const x1 = $y1.offset().left + $y1.width()/2-padding;
+  const y1 = $y1.offset().top + $y1.height()/2-padding;
+  const x2 = $y2.offset().left + $y1.width()/2;
+  const y2 = $y2.offset().top + $y1.height()/2;
+
+  $line3.attr("x1", x1);
+  $line3.attr("y1", y1);
+  $line3.attr("x2", x2);
+  $line3.attr("y2", y2);
+}
+coordinatesthree();
+
+
+const $g1 = $("#green1");
+const $g2 = $("#green2");
+const $line4 = $("#line4");
+const coordinatesfour = function() {
+  const x1 = $g1.offset().left + $g1.width()/2-padding;
+  const y1 = $g1.offset().top + $g1.height()/2-padding;
+  const x2 = $g2.offset().left + $g1.width()/2;
+  const y2 = $g2.offset().top + $g1.height()/2;
+
+  $line4.attr("x1", x1);
+  $line4.attr("y1", y1);
+  $line4.attr("x2", x2);
+  $line4.attr("y2", y2);
+}
+coordinatesfour();
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('load', function() {
+  'use strict';
+  $line.css({"opacity":"0"})
+
+  var target = document.getElementById('red2'),
+  inAnim = false,
+    DURATION = 0.2,
+    port = document.getElementById('red1'),
+    bBox = target.getBoundingClientRect(),
+    portPosition = port.getBoundingClientRect(),
+    snapped;
+
+    port.style.width = bBox.width + 'px';
+  port.style.height = bBox.height + 'px';
+  portPosition = {
+    left: portPosition.left + window.pageXOffset,
+    top: portPosition.top + window.pageYOffset
+  };
+
+    const coordinates = function() {
+  const x1 = $r1.offset().left + $r1.width()/2-padding;
+  const y1 = $r1.offset().top + $r1.height()/2-padding;
+  const x2 = $r2.offset().left + $r1.width()/2-padding;
+  const y2 = $r2.offset().top + $r1.height()/2-padding;
+
+  $line.attr("x1", x1);
+  $line.attr("y1", y1);
+  $line.attr("x2", x2);
+  $line.attr("y2", y2);
+}
+coordinates();
+
+    function animMode(toOn) {
+    if (toOn !== inAnim) {
+      inAnim = toOn;
+      mClassList(target)[inAnim ? 'add' : 'remove']('ex-060-anim');
+    }
+  }
+  
+  var draggable = new PlainDraggable(target, {
+    onDrag: function(moveTo) {  
+      animMode(!!(snapped = moveTo.snapped));   
+      $line.css({"opacity":"0.7"})
+coordinates();
+return;
+},
+
+
+    snap:
+    [ {x: 252, y: 151, center: true},
+      {x: 274, y: 151, center: true},
+      {x: 311, y: 151, center: true},
+      {x: 349, y: 151, center: true},
+      {x: 385, y: 151, center: true},
+      {x: 282, y: 180, center: true},
+      {x: 345, y: 180, center: true},
+      {x: 389, y: 180, center: true},
+      {x: 302, y: 208, center: true},
+      {x: 337, y: 208, center: true},
+      {x: 374, y: 208, center: true},
+      {x: 293, y: 238, center: true},
+      {x: 331, y: 238, center: true},
+      {x: 364, y: 238, center: true},
+      {x: 244, y: 266, center: true},
+      {x: 282, y: 266, center: true},
+      {x: 337, y: 266, center: true}
+    ]
+    ,
+    onDragEnd: function() {
+      if (!snapped) {
+        $line.css({"opacity":"0"})
+        this.left = portPosition.left;
+        this.top = portPosition.top;
+      }
+    }
+
+  });
+});
+
+
+
+$('#orange1, #orange2').draggable({
+  drag: coordinatestwo
+});
+
+$('#yellow1, #yellow2').draggable({
+  drag: coordinatesthree
+});
+
+
+$('#green1, #green2').draggable({
+  drag: coordinatesfour
+});
+
+
+</script>
+</html>
