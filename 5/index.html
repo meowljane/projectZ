@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <body style="background-color: black;">
+<div id="틀" >
+<div class = "puzzle" id="red" ></div>
+<div class = "puzzle" id="yellow"></div>
+<div class = "puzzle" id="blue"></div>
+<div class = "puzzle" id="green"></div>
+</div>
+</body>
+
+<style>
+  #틀{background-image: url('./5.png');
+background-size: cover;
+width : 800px;
+height : 600px;}
+#red{background-image: url('./4.png');
+background-size: cover;
+width : 400px;
+height : 300px;
+position: absolute; left: -50px; top: 360px;}
+#yellow{background-image: url('./2.png');
+background-size: cover;
+width : 400px;
+height : 300px;
+position: absolute; left: -50px; top: 130px;}
+#green{background-image: url('./1.png');
+background-size: cover;
+width : 400px;
+height : 300px;
+position: absolute; left: 440px; top: 360px;}
+#blue{background-image: url('./3.png');
+background-size: cover;
+width : 400px;
+height : 300px;
+position: absolute; left: 440px; top: 130px;}
+</style>
+<script>
+
+$('.puzzle').draggable();
+</script>
+</html>
