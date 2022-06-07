@@ -1,15 +1,55 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Q6</title>
-  <link rel="stylesheet" href="./style.css">
+<!DOCTYPE HTML>
+<html>
 
-</head>
-<body>
-  <audio loop="" autoplay="autoplay" id="white">
- <source src="https://docs.google.com/uc?export=open&amp;id=1qBHm5AInwQx0-pIGjKsleojaQWFhRwRC" type="audio/mp3">
-</audio>
-  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <body style="background-color: black;">
+      <img id="케이크" src="KakaoTalk_20220608_041037262.png" usemap="#image-map">
+
+      <map name="image-map">
+          <area id="왼치즈" onmouseover="$('.틀').css({'opacity':'1'})" onmouseleave="$('.틀').css({'opacity':'0'})" coords="492,280,492,311,507,317,540,317,552,311,552,278,517,271" shape="poly">
+          <area href="#" onclick="window.open('https://meowljane.github.io/projectZ/6/KakaoTalk_20220608_041105257.png','cheese','width=400 height=400 left=50');" coords="560,281,560,311,579,315,583,319,606,320,611,315,623,310,620,278,586,271" shape="poly">
+      </map>
+<div class="틀">
+<img class = "popup" id="치즈" src="KakaoTalk_20220608_041105257.png" >
+</div>
+
 </body>
+
+<style>
+  #케이크{
+background-size: cover;
+width :700px;
+height : 700px;
+position: absolute;
+    margin-top: -100px;}
+
+.틀{opacity: 0;
+  display:block;
+  width: 300px;
+height: 200px;
+background-color: beige;
+border-radius: 30px;
+border: 7px solid bisque;
+box-sizing: border-box;
+position: absolute;
+    margin-left: 200px;
+    margin-top: 100px;
+    transition:0.5s all}
+
+
+
+  #케이크:hover #틀 {
+  opacity: 1;
+}
+
+#치즈{    position: relative;
+  top: -60px;
+    left: -5px;}
+
+</style>
+<script>
+
+$('.puzzle').draggable();
+</script>
 </html>
