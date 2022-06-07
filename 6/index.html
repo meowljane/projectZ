@@ -1,55 +1,89 @@
 <!DOCTYPE HTML>
 <html>
 
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <body style="background-color: black;">
-      <img id="케이크" src="KakaoTalk_20220608_041037262.png" usemap="#image-map">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-      <map name="image-map">
-          <area id="왼치즈" onmouseover="$('.틀').css({'opacity':'1'})" onmouseleave="$('.틀').css({'opacity':'0'})" coords="492,280,492,311,507,317,540,317,552,311,552,278,517,271" shape="poly">
-          <area href="#" onclick="window.open('https://meowljane.github.io/projectZ/6/KakaoTalk_20220608_041105257.png','cheese','width=400 height=400 left=50');" coords="560,281,560,311,579,315,583,319,606,320,611,315,623,310,620,278,586,271" shape="poly">
-      </map>
-<div class="틀">
-<img class = "popup" id="치즈" src="KakaoTalk_20220608_041105257.png" >
-</div>
+<body style="background-color: black;">
+  <img id="케이크" src="KakaoTalk_20220608_041037262.png" usemap="#image-map">
+
+  <map name="image-map">
+    <area id="딸기" onmouseover="$('#딸기틀').css({'opacity':'1'})" onmouseleave="$('#딸기틀').css({'opacity':'0'})"
+      coords="133,291,112,275,105,275,98,269,91,280,75,287,70,293,69,311,74,317,100,318,116,317,121,320,151,319,153,314,165,316,193,317,201,317,204,310,205,293,200,286,183,275,178,278,172,272,167,279,154,284,143,292,143,305,134,305"
+      shape="poly">
+    <area id="티라미수" onmouseover="$('#티라미수틀').css({'opacity':'1'})" onmouseleave="$('#티라미수틀').css({'opacity':'0'})"
+      coords="245,269,242,277,225,285,215,291,212,300,212,312,218,317,238,318,255,319,263,317,268,320,295,320,296,314,312,317,322,317,341,317,346,312,344,288,336,281,321,269,316,277,297,283,285,291,283,297,283,305,276,305,275,288,264,280,264,273"
+      shape="poly">
+    <area id="블루베리" onmouseover="$('#블루베리틀').css({'opacity':'1'})" onmouseleave="$('#블루베리틀').css({'opacity':'0'})"
+      coords="416,290,415,305,421,305,422,292,433,284,446,280,460,274,474,281,483,292,482,313,476,317,461,317,438,318,431,321,408,321,400,317,380,319,360,318,353,312,353,293,372,283,392,275,404,280"
+      shape="poly">
+    <area id="치즈" onmouseover="$('#치즈틀').css({'opacity':'1'})" onmouseleave="$('#치즈틀').css({'opacity':'0'})"
+      coords="492,280,492,311,507,317,540,317,552,311,552,278,517,271" shape="poly">
+    <area id="메이플" onmouseover="$('#메이플틀').css({'opacity':'1'})" onmouseleave="$('#메이플틀').css({'opacity':'0'})"
+      coords="560,281,560,311,579,315,583,319,606,320,611,315,623,310,620,278,586,271" shape="poly">
+  </map>
+
+  <div class="틀" id="딸기틀">
+    <img class="케이크" src="생크림케이크.png">
+  </div>
+
+
+  <div class="틀" id="티라미수틀">
+    <img class="케이크" src="티라미수.png">
+  </div>
+
+
+  <div class="틀" id="블루베리틀">
+    <img class="케이크" src="블루베리케이크.png">
+  </div>
+
+
+  <div class="틀" id="치즈틀">
+    <img class="케이크" src="치즈케이크.png">
+  </div>
+
+  <div class="틀" id="메이플틀">
+    <img class="케이크" src="메이플케이크.png">
+  </div>
 
 </body>
 
 <style>
-  #케이크{
-background-size: cover;
-width :700px;
-height : 700px;
-position: absolute;
-    margin-top: -100px;}
+  #케이크 {
+    background-size: cover;
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    margin-top: -100px;
+  }
 
-.틀{opacity: 0;
-  display:block;
-  width: 300px;
-height: 200px;
-background-color: beige;
-border-radius: 30px;
-border: 7px solid bisque;
-box-sizing: border-box;
-position: absolute;
+  .틀 {
+    opacity: 0;
+    display: block;
+    width: 300px;
+    height: 200px;
+    background-color: beige;
+    border-radius: 30px;
+    border: 7px solid bisque;
+    box-sizing: border-box;
+    position: absolute;
     margin-left: 200px;
     margin-top: 100px;
-    transition:0.5s all}
+    transition: 0.5s all;
+    POINTER-EVENTS: NONE;
+  }
 
 
-
-  #케이크:hover #틀 {
-  opacity: 1;
-}
-
-#치즈{    position: relative;
-  top: -60px;
-    left: -5px;}
-
+  .케이크 {
+    position: relative;
+    top: -65px;
+    left: -5px;
+    POINTER-EVENTS: NONE;
+  }
 </style>
 <script>
 
-$('.puzzle').draggable();
+  $('.puzzle').draggable();
 </script>
+
 </html>
