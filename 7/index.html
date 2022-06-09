@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+
+<body style="background-color: black;">
+  <div class="book"></div>  <div class="top"></div>
+  <div class="sun">
+  <div class="box" id="red1"></div>
+  <div class="box move" id="red2"></div>
+</div>
+
+
+  <svg height="1000" width="1000">
+    <line class="line" id="line" x1="0" y1="0" x2="0" y2="0" style="position:absolute" />
+  
+  </svg>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+
+
+</body>
+
+<style>
+.sun{    width: 700px;
+    height: 277px;
+    position: absolute;}
+  .box {
+    opacity: 0.4;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .move {
+    position: inherit;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .book {
+    background-image: url('줄잇기.png');
+    background-size: cover;
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .top {
+    background-image: url('top.png');
+    background-size: cover;
+    width: 700px;
+    height: 277px;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .line {
+    z-index: 5;
+    stroke: rgb(0,0,0);
+    stroke-width: 25px;
+    stroke-linecap: round;
+    opacity : 0.7;
+  }
+
+  #red1 {
+    left: 354.5px;
+    top: 266.5px;
+    position: absolute;
+  }
+
+  #red2 {
+    background-color: yellow;
+    left: 400px;
+    top: 100px;
+    position: absolute;
+  }
+
+</style>
+<script>
+
+
+
+  window.addEventListener('load', function () {
+    'use strict';
+    ///////////////////////////////////////////
+    const $r1 = $("#red1");
+const $r2 = $("#red2");
+const $line = $("#line");
+const padding = 7;
+const coordinates = function() {
+  const x1 = $r1.offset().left + $r1.width()/2-padding;
+  const y1 = $r1.offset().top + $r1.height()/2-padding;
+  const x2 = 750-$("#red2").offset().left;
+        const y2 = 550-$("#red2").offset().top;
+
+  $line.attr("x1", x1);
+  $line.attr("y1", y1);
+  $line.attr("x2", x2);
+  $line.attr("y2", y2);
+}
+coordinates();
+
+    function animMode(toOn) {
+      if (toOn !== inAnim) {
+        inAnim = toOn;
+        mClassList(target[0])[inAnim ? 'add' : 'remove']('ex-060-anim');
+      }
+    }
+
+    ////////////////////////////////////////////////////
+
+   
+    var inAnim = false,
+      DURATION = 0.2,
+      port = $("#red1"),
+      target = $("#red2"),
+      bBox = target[0].getBoundingClientRect(),
+      portPosition = port[0].getBoundingClientRect(),
+      snapped;
+
+    var snapshot =
+      [{ x: 252, y: 151, center: true }
+      ]
+
+    //////////////////////////
+
+
+    var draggable = new PlainDraggable($('#red2')[0], {
+      onDrag: function (moveTo) {
+
+        port = $("#red1");
+        target = $("#red2");
+        const $line = $("#line");
+        animMode(!!(snapped = moveTo.snapped));
+        const x1 = port.offset().left + port.width() / 2 - padding;
+        const y1 = port.offset().top + port.height() / 2 - padding;
+        const x2 = 750-$("#red2").offset().left;
+        const y2 = 550-$("#red2").offset().top;
+        $line.attr("x1", x1);
+        $line.attr("y1", y1);
+        $line.attr("x2", x2);
+        $line.attr("y2", y2);
+      },
+      snap: snapshot
+      
+    });
+
+  });
+
+
+</script>
+
+</html>
