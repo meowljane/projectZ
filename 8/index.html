@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>tutorial1</title>
+  <link rel="stylesheet" href="./style.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+
+</head>
+<body>
+<div id="대화1">
+<img src="말풍선.png" class="말풍선">
+<p style="    position: absolute;
+z-index: 4;
+top: 200px;
+left: 207px;
+font-family: 폰트;
+font-size: 23px;">못 뵙던 분이시네요. 저희 미용실은 처음이신가요?</p>
+<div id="yes" class="선택지" onclick="$('#대화1').fadeOut(500);$('#대화2').fadeIn(1000)">예전에 이용했던 적이 있다.</div>
+<div id="no" class="선택지" onclick="$('#대화1').fadeOut(500);$('#대화3').fadeIn(1000)">이발소일 때 이용했었다.</div>
+</div>
+
+<div id="대화2">
+  <img src="./말풍선.png" class="말풍선">
+<p style="    position: absolute;
+z-index: 4;
+top: 200px;
+left: 167px;
+font-family: 폰트;
+font-size: 23px;">아, 혹시 예약해주셨을까요? 성함을 가르쳐주시겠어요?</p>
+<div id="next" class="선택지" onclick="$('#대화2').fadeOut(500);$('#대화4').fadeIn(1000)">아...그게...</div>
+
+</div>
+
+<div id="대화3">
+  <img src="./말풍선.png" class="말풍선">
+  <p style="    position: absolute;
+  z-index: 4;
+  top: 180px;
+  left: 280px;
+  font-family: 폰트;
+  font-size: 23px;">아... 이제 아빠는 안 계세요</p>
+    <p style="    position: absolute;
+    z-index: 4;
+    top: 220px;
+    left: 230px;
+    font-family: 폰트;
+    font-size: 23px;">괜찮으시다면 잠시만 기다려 주시겠어요?</p>
+    <div id="next" class="선택지" onclick="$('#대화3').fadeOut(500);$('#대화5').fadeIn(1000)">기다리자</div>
+
+  </div>
+
+  <div id="대화4">
+    <img src="./속마음.png" class="속마음">
+    <p style="
+    position: absolute;
+    color : white;
+    z-index: 4;
+    top: 200px;
+    left: 294px;
+    font-family: 폰트;
+    font-size: 23px;
+    background: black;
+    width:242px;
+  ">예약은 하지 않았는데….</p>
+
+<p style="width:302px;position: absolute;color : white;z-index: 4;top: 300px;left: 262px;font-family: 폰트;font-size: 23px;background-color: black;">
+  더 그럴 듯한 변명을 생각해보자.</p>
+
+  <div style="width: 123px;" id="next2" class="선택지" onclick="$('#대화4').fadeOut(500);$('#대화1').fadeIn(1000)">선택지로 돌아가기</div>
+  
+  </div>
+
+
+  
+<div id="대화5">
+  <img src="./말풍선.png" class="말풍선">
+  <p style="    position: absolute;
+  z-index: 4;
+  top: 180px;
+  left: 245px;
+  font-family: 폰트;
+  font-size: 23px;">저희 아빠는 3년 전에 돌아가셨어요.</p>
+    <p style="    position: absolute;
+    z-index: 4;
+    top: 220px;
+    left: 295px;
+    font-family: 폰트;
+    font-size: 23px;">지금은 제가 운영하고 있죠.</p>
+    <div id="next" class="선택지" onclick="$('#대화5').fadeOut(500);$('#문제').fadeIn(1000)">문제풀기</div>
+
+  </div>
+
+  <div id="문제">
+<iframe src="inner.html" width="1000px" height="1000px"scrolling="no" style="overflow:hidden;border:0;"></iframe>
+<form name="frm" onsubmit="func();" style="
+position: absolute;
+left: 312px;
+width: 134px;
+top: 420px;
+">
+  <input type="text" id="answer" size="10" style="
+
+  left: -45px;
+  position: absolute;
+">
+  <button type="button" onclick="func()" style="
+  position: absolute;
+  left: 63px;
+">정답확인</button>
+  </form>
+</div>
+
+
+<div id="대화6">
+  <img src="./말풍선.png" class="말풍선">
+
+    <p style="    position: absolute;
+    z-index: 4;
+    top: 220px;
+    left: 295px;
+    font-family: 폰트;
+    font-size: 23px;">참 잘했어요 테스트 끝!!</p>
+  
+
+  </div>
+
+
+
+<style>
+
+@font-face {
+    font-family: '폰트';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+	60% {
+		-webkit-transform: translateY(-8px);
+		-ms-transform:     translateY(-8px);
+		transform:         translateY(-8px)
+	}
+}
+
+.선택지:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
+}
+
+.선택지{    border: 6px double black;
+    position: absolute;
+    border-radius: 10px;
+    height: 36px;
+    padding-top: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: '폰트';
+    -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;}
+
+    #yes{
+      top: 310px;
+    left: 210px;}
+    #no{
+      top: 310px;
+    left: 450px;}
+    #next{top: 310px;
+    left: 375px;}
+    #next2{top: 438px;
+    left: 330px;
+    background-color: white;}
+
+.말풍선{width:800px; height:562px;
+display: block;}
+.속마음{width:500px; height:500px;
+  left: 150px;
+    position: absolute;
+    top: 100px;
+}
+#대화1{display:block;
+position: absolute;
+top: 0px;}
+#대화2{display:none;
+  position: absolute;
+top: 0px;}
+#대화3{display:none;
+  position: absolute;
+top: 0px;}
+#대화4{display:none;
+  position: absolute;
+top: 0px;}
+#대화5{display:none; 
+  position: absolute;
+top: 0px;}
+#대화6{display:none; 
+  position: absolute;
+top: 0px;}
+#문제{display:none; 
+  position: absolute;
+top: 0px;}
+
+
+#그림 {position: absolute;}
+  #틀{
+    position: absolute;
+width :2000px;
+height : 2000px;}
+#red{background-image: url('./4.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: -50px; top: 360px;}
+#yellow{background-image: url('./2.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: -50px; top: 130px;}
+#green{background-image: url('./1.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: 440px; top: 360px;}
+#blue{background-image: url('./3.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: 440px; top: 130px;}
+</style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+  <script>
+
+
+    function func() {
+	var str = document.frm.answer.value;
+	
+	if(str=="") {
+		alert('답을 입력하세요.');
+		return;
+	}
+
+		if(str == "소실"){
+			$('#문제').fadeOut(500);$('#대화6').fadeIn(1000)
+
+		}
+		else{
+			alert("틀렸습니다!");
+		
+		}
+
+	
+}
+
+    </script>
+</body>
+</html>
