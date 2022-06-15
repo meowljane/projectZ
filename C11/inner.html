@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+
+      
+      <img id="그림" src="5.png">
+<div id="틀" >
+<div class = "puzzle" id="red" ></div>
+<div class = "puzzle" id="yellow"></div>
+<div class = "puzzle" id="blue"></div>
+<div class = "puzzle" id="green"></div>
+</div>
+
+
+<style>
+  #그림 {position: absolute;}
+  #틀{
+    position: absolute;
+width :2000px;
+height : 2000px;}
+#red{background-image: url('./4.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: -50px; top: 360px;}
+#yellow{background-image: url('./2.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: -50px; top: 130px;}
+#green{background-image: url('./1.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: 440px; top: 360px;}
+#blue{background-image: url('./3.png');
+background-size: cover;
+width : 150px;
+height : 150px;
+position: absolute; left: 440px; top: 130px;}
+</style>
+<script>
+
+window.addEventListener('load', function() {
+  'use strict';
+
+  new PlainDraggable(document.getElementById('red'), {
+    snap: [
+      {x: 424, y:83, width: 150, height: 150}
+    ],
+    onDragEnd : function (){
+      $("#red").css({ "z-index": "3" });
+      $("#yellow").css({ "z-index": "2" });
+      $("#green").css({ "z-index": "2" });
+      $("#blue").css({ "z-index": "2" });
+    }
+  });
+  new PlainDraggable(document.getElementById('yellow'), {
+    snap: [
+      {x: 424, y:83, width: 150, height: 150}
+    ],
+    onDragEnd : function (){
+      $("#red").css({ "z-index": "2" });
+      $("#yellow").css({ "z-index": "3" });
+      $("#green").css({ "z-index": "2" });
+      $("#blue").css({ "z-index": "2" });
+    }
+
+  });
+  new PlainDraggable(document.getElementById('green'), {
+    snap: [
+      {x: 424, y:83, width: 150, height: 150}
+    ]
+    ,
+    onDragEnd : function (){
+      $("#red").css({ "z-index": "2" });
+      $("#yellow").css({ "z-index": "2" });
+      $("#green").css({ "z-index": "3" });
+      $("#blue").css({ "z-index": "2" });
+    }
+  });
+  new PlainDraggable(document.getElementById('blue'), {
+    snap: [
+      {x: 424, y:83, width: 150, height: 150}
+    ],
+    onDragEnd : function (){
+      $("#red").css({ "z-index": "2" });
+      $("#yellow").css({ "z-index": "2" });
+      $("#green").css({ "z-index": "2" });
+      $("#blue").css({ "z-index": "3" });
+    }
+  });
+
+
+});
+</script>
+</html>
