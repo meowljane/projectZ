@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>dialogue11</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+
+</head>
+
+<body onload="
+$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
+ $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+ $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+ $('#주문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ $('#질문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);">
+
+
+  <div class="말풍선" id="대화1" >
+    <div style="width:800px;height:800px;padding-top:20%">
+    <div class="대화" id="일">
+    <p  >안녕하세요, 손님. </p>
+  </div>
+  <div class="대화" id="이">
+    <p  >주문하시겠습니까? </p>
+  </div>
+    <div  class="선택지"  id="주문"  style="margin-right:20%;     width: 68px !important;
+    padding-top: 29px !important;
+    padding-bottom: 28px !important;"
+    onclick="$('#대화1').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+    $('#대화2').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+    $('#삼').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+    $('#아아').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+    $('#카푸').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+">주문한다.</div>
+
+<div  class="선택지" id="질문" style="width: 68px !important;
+padding-top: 29px !important;
+padding-bottom: 28px !important;"
+onclick="$('#대화1').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화5').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십삼').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#교통').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#친구').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+">질문한다.</div>
+  </div>
+  </div>
+
+  <div class="말풍선" id="대화2" >
+    <div style="width:800px;height:800px;padding-top:26%">
+    <div class="대화" id="삼">
+    <p  >어떤 메뉴로 주문하시겠습니까?</p>
+  </div>
+  <div  class="선택지"  id="아아" style="margin-right: 20%;    height: 50px !important;
+  width: 95px !important;
+  padding-top: 30px !important;
+  padding-bottom: 24px !important;"
+  onclick="$('#대화2').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화3').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#사').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#오').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  $('#육').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+  $('#칠').css({opacity:0, visibility:'visible'}).delay(3500).animate({opacity:1}, 1000);
+  $('#팔').css({opacity:0, visibility:'visible'}).delay(4500).animate({opacity:1}, 1000);
+">따뜻한 아이스 아메리카노</div>
+
+
+<div  class="선택지" id="카푸" style="    height: 50px !important;
+width: 95px !important;
+padding-top: 30px !important;
+padding-bottom: 24px !important;"
+onclick="$('#대화2').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화4').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#십일').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+$('#십이').css({opacity:0, visibility:'visible'}).delay(3500).animate({opacity:1}, 1000);
+">우유를 뺀 카푸치노</div>
+  </div>
+  </div>
+
+
+  <div class="속마음" id="대화3">
+    <div style="width:500px;height:500px;padding-top:10% ;    margin-left: 15%;">
+   
+  <div class="대화" id="사" style="color:white; background-color:black; font-size: 22px;">
+    <p  >따뜻한 아이스 아메리카노는 미지근한 아메리카노일까?</p>
+  </div>
+  <div class="대화" id="오" style="color:white; background-color:black">
+    <p  >아니면 얼음이 없는 뜨거운 아메리카노일까?</p>
+  </div>
+  <div class="대화" id="육" style="color:white; background-color:black">
+    <p  >고민이 끊임없이 꼬리를 물고 늘어졌다.</p>
+  </div>
+  <div class="대화" id="칠" style="color:white; background-color:black">
+    <p  >존재할 수 없는 음료수 아닐까?</p>
+  </div>
+  <div class="대화" id="팔" style="color:white; background-color:black">
+    <p  >질문할 내용을 다시 한번 생각해보자.</p>
+  </div>
+    <div  class="선택지" style=" margin-top: 10%;"
+    onclick="$('#대화3').css({ visibility:'hidden'}).animate({opacity:0}, 1000);
+    $('#아아').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+    $('#카푸').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화1').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+ $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+ $('#주문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ $('#질문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">돌아가기</div>
+  </div>
+  </div>
+
+
+  <div class="속마음" id="대화4">
+    <div style="width:500px;height:500px;padding-top:10% ;    margin-left: 15%;">
+   
+  <div class="대화" id="구" style="color:white; background-color:black;">
+    <p  >우유를 뺀 카푸치노를 주문했더니</p>
+  </div>
+  <div class="대화" id="십" style="color:white; background-color:black;">
+    <p  >작은 컵에 새까만 음료가 나왔다.‘</p>
+  </div>
+  <div class="대화" id="십일" style="color:white; background-color:black">
+    <p  >퉤퉷, 너무 써서 먹을 수 없을 것 같다.</p>
+  </div>
+  <div class="대화" id="십이" style="color:white; background-color:black">
+    <p  >질문할 내용을 다시 한번 생각해보자.</p>
+  </div>
+
+    <div  class="선택지" style=" margin-top: 10%;"
+    onclick="$('#대화4').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+        $('#아아').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+    $('#카푸').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화1').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+ $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+ $('#주문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ $('#질문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">돌아가기</div>
+  </div>
+  </div>
+
+
+  <div class="말풍선" id="대화5" >
+    <div style="width:800px;height:800px;padding-top:26%">
+    <div class="대화" id="십삼">
+    <p  >어떤 게 궁금하신가요?</p>
+  </div>
+  <div  class="선택지"  id="교통" style="margin-right: 20%;    height: 50px !important;
+  width: 95px !important;
+  padding-top: 30px !important;
+  padding-bottom: 24px !important;"
+  onclick="$('#대화5').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화6').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#십사').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#십오').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+">3년 전 </br>교통사고</div>
+
+<div  class="선택지"  id="문제" style=" height: 50px !important;
+width: 90px !important;    padding-top: 38px !important;
+    padding-bottom: 12px !important;  top: 291px;
+    left: 342px;"
+onclick="$('#대화5').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화10').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+">그렇다면...</div>
+
+<div  class="선택지" id="친구" style="    height: 50px !important;
+width: 95px !important;
+padding-top: 40px !important;
+    padding-bottom: 14px !important;
+    transform: translateY(-10px);"
+onclick="$('#대화5').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화9').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#이십').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#이십일').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#이십이').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+$('#이십삼').css({opacity:0, visibility:'visible'}).delay(3500).animate({opacity:1}, 1000);
+">친구</div>
+  </div>
+  </div>
+
+  <div class="말풍선" id="대화6" >
+    <div style="width:800px;height:800px;padding-top:20%">
+    <div class="대화" id="십사">
+    <p  >3년 전 교통사고 말씀이신가요?</p>
+  </div>
+  <div class="대화" id="십오">
+    <p  >그 시절 일은 아직도 잠자리에 누울 때면 떠올리곤 합니다.</p>
+  </div>
+  <div  class="선택지" style=" margin-top: 3%;"
+  onclick="$('#대화6').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화7').css({visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십육').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#십칠').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#십팔').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">다음으로</div>
+  </div>
+  </div>
+
+  <div class="말풍선" id="대화7" >
+    <div style="width:800px;height:800px;padding-top:18%">
+    <div class="대화" id="십육">
+    <p  >그날의 사건으로 저는 두 명의 친구를 잃었죠.</p>
+  </div>
+  <div class="대화" id="십칠">
+    <p  >사람 한 명 없는 다방에서 시간을 보낼 거였다면, </p>
+  </div>
+  <div class="대화" id="십팔">
+    <p  >차라리 거리로 나설 걸 그랬습니다.</p>
+  </div>
+  <div  class="선택지" 
+  onclick="$('#대화7').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화8').css({visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+opena=1;
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+
+  <div class="말풍선" id="대화8" >
+    <div style="width:800px;height:800px;padding-top:25%">
+   
+  <div class="대화" id="십구">
+    <p  >다른 궁금하신 건 없으신가요? </p>
+  </div>
+    <div  class="선택지" style=" margin-top: 5%;"
+    onclick="$('#대화8').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화5').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십삼').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#교통').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#친구').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+if(opena==1&&openb==1){$('#문제').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);}
+   ">돌아가기</div>
+  </div>
+  </div>
+
+  <div class="말풍선" id="대화9" >
+    <div style="width:800px;height:800px;padding-top:18%; line-height: 18px;">
+    <div class="대화" id="이십">
+    <p  >저는 사람들을 대하는 게 서투릅니다.</p>
+  </div>
+  <div class="대화" id="이십일">
+    <p  >그래서 글로 풀곤 했습니다.</p>
+  </div>
+  <div class="대화" id="이십이">
+    <p  >그런 제게 말을 걸어주던 친구들이 있었는데,</p>
+  </div>
+  <div class="대화" id="이십삼">
+    <p  >동네에 몇 없는 친구들이었죠.</p>
+  </div>
+  <div  class="선택지" 
+  onclick="$('#대화9').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화8').css({visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+openb=1;
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+  <div id="대화10">
+    <iframe src="inner.html" width="1000px" height="1000px"scrolling="no" style="overflow:hidden;border:0;"></iframe>
+    <form name="frm" onsubmit="func();return false;" style="
+    position: absolute;
+    left: 312px;
+    width: 134px;
+    top: 420px;
+    ">
+      <input  onkeyup='printName()' onsubmit="return false;func();"
+      name="name"
+      type="text" id="answer" size="10" style="
+background-image: url(./답.png);
+    left: -86px;
+    top: -5px;
+    position: absolute;
+    height: 60px;
+    width: 200px;
+    background-size: cover;
+    background-color: rgba(0,0,0,0);
+    text-align: center;
+    font-family: '폰트';
+    border: none;
+    padding-top: 5px;
+    outline: none;
+    " autofocus value="이곳에 정답 입력"
+    onfocus="javascript:get_Name();">
+      <button type="button" onclick="func()" style="
+    cursor: pointer;
+    background-image: url(./동그라미.png);
+    position: absolute;
+    left: 125px;
+    height: 57px;
+    width: 70px;
+    background-size: cover;
+    background-color: rgba(0,0,0,0);
+    text-align: center;
+    font-family: '폰트';
+    border: none;
+    ">확인</button>
+
+<script type="text/javascript">
+  document.forms[0].id.focus();
+  document.forms[0].id.select();
+  </script>
+      </form>
+      <input style="visibility: hidden;">
+
+    </div>
+
+
+    <div class="말풍선" id="대화11" >
+      <div style="width:800px;height:800px;padding-top:20%">
+     
+    <div class="대화" id="이십사">
+      <p  ><div id='result' style="display: contents;"></div>...? </p>
+    </div>
+    <div class="대화" id="이십오">
+      <p  >갑자기 그게 무슨 말이죠...? </p>
+    </div>
+      <div  class="선택지" style=" margin-top: 5%;"
+      onclick="$('#대화11').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화10').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+ ">돌아가기</div>
+    </div>
+    </div>
+
+
+    
+    <div class="말풍선" id="대화12" >
+      <div style="width:800px;height:800px;padding-top:18%">
+     
+    <div class="대화" id="이십육">
+      <p  >하지만 3년 전 교통사고를 계기로</p>
+    </div>
+    <div class="대화" id="이십칠">
+      <p  >저는 둘 모두를 잃었습니다. </p>
+    </div>
+    <div class="대화" id="이십팔">
+      <p  >당시 상황은 저도 눈으로 목격한 것은 아니었습니다.</p>
+    </div>
+      <div  class="선택지" 
+      onclick="$('#대화12').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화13').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#이십구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#삼십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  $('#삼십일').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ ">다음으로</div>
+    </div>
+    </div>
+
+    <div class="말풍선" id="대화13" >
+      <div style="width:800px;height:800px;padding-top:18%">
+     
+    <div class="대화" id="이십구">
+      <p  >고장 난 트럭이</p>
+    </div>
+    <div class="대화" id="삼십">
+      <p  >근처에 있던 신호등으로 돌진했다고 들었습니다.</p>
+    </div>
+    <div class="대화" id="삼십일">
+      <p  >아마 사람들을 피하려던 행동이었겠죠.</p>
+    </div>
+      <div  class="선택지"
+      onclick="$('#대화13').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화14').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#삽십이').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#삼십삼').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  $('#삼십사').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ ">다음으로</div>
+    </div>
+    </div>
+
+
+    <div class="말풍선" id="대화14" >
+      <div style="width:800px;height:800px;padding-top:18%">
+     
+    <div class="대화" id="삼십이">
+      <p  >하지만 그 근처에 있던 이발소의 문이 열렸고,</p>
+    </div>
+    <div class="대화" id="삼십삼">
+      <p  >그곳에 하필이면</p>
+    </div>
+    <div class="대화" id="삼십사">
+      <p  >자신의 친구가 나온 것이 문제였을 겁니다.</p>
+    </div>
+      <div  class="선택지"
+      onclick="$('#대화14').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화15').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#삼십오').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#삼십육').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  $('#삼십칠').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ ">다음으로</div>
+    </div>
+    </div>
+
+
+    <div class="말풍선" id="대화15">
+      <div style="width:800px;height:800px;padding-top: 22%;">
+      <div class="대화" id="삼십오">
+      <p   >마냥 슬퍼할 수만은 없었습니다.</p>
+    </div>
+    <div class="대화" id="삼십육">
+      <p  >그 자리에는 국화, 그 친구의 ‘딸아이’가 있으니까요.</p>
+    </div>
+    <div class="대화" id="삼십칠">
+      <p  >[키워드 <span style="color: red;"><딸아이></span>를 얻었습니다.]</p>
+    </div>
+    </div>
+
+
+    <div class="말풍선" id="대화16" >
+      <div style="width:800px;height:800px;padding-top:25%">
+
+    <div class="대화" id="삼십팔">
+      <p  >네...? </p>
+    </div>
+      <div  class="선택지" style=" margin-top: 5%;"
+      onclick="$('#대화16').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화10').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+ ">돌아가기</div>
+    </div>
+    </div>
+
+
+  <style>
+    .말풍선 {
+      text-align: center;
+      width: 800px;
+      height: 562px;
+      display: block;
+      background-size: cover;
+      background-image: url(./말풍선.png);
+    }
+
+    .속마음 {
+      background-size: cover;
+      background-image: url(./속마음.png);
+      width: 700px;
+      height: 700px;
+      display: block;
+      text-align: center;
+    }
+
+
+    .대화 {
+      text-align: center;
+    z-index: 4;
+    font-family: 폰트;
+    font-size: 23px;
+    margin: 0 auto;
+    width: fit-content;
+    color: black
+}
+
+
+    .선택지 {
+      color: black;
+      display: inline-block;
+      text-align: center;
+      background-size: cover;
+      background-image: url(./동그라미.png);
+      height: 24px;
+      width: 59px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-family: '폰트';
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+    }
+
+
+    .선택지:hover {
+      cursor: pointer;
+      animation-name: bounce;
+      -moz-animation-name: bounce;
+    }
+
+
+
+    #대화1 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화2 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화3 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화4 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화5 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화6 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화7 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화8 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화9 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화10 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #문제 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화11 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화12 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화13 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화14 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화15 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    @font-face {
+      font-family: '폰트';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100%,
+      20%,
+      50%,
+      80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+      }
+
+      40% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+      }
+
+      60% {
+        -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+        transform: translateY(-8px)
+      }
+    }
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+
+    var opena = 0;
+    openb = 0;
+
+
+  </script>
+
+<script>
+
+
+  function func() {
+var str = document.frm.answer.value;
+
+if(str=="") {
+  $('#대화10').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화16').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#삼십팔').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+}
+
+  if(str == "소실"){
+  $('#대화10').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화12').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#이십육').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#이십칠').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  $('#이십팔').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+
+  }
+  else{
+    $('#대화10').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화11').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#이십사').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#이십오').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  }
+}
+
+function printName() {
+
+const name = document.getElementById('answer').value;
+
+document.getElementById("result").innerText = name;
+
+}
+
+
+function get_Name(){
+document.frm.name.value='';
+}
+  </script>
+
+</body>
+
+</html>
