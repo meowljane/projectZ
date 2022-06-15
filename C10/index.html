@@ -17,18 +17,14 @@
 <body onload="
 $('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
  $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
- $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
- $('#동네').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- $('#꽃집').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);">
+ $('#동네').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+ $('#꽃집').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);">
 
 
   <div class="말풍선" id="대화1" >
-    <div style="width:800px;height:800px;padding-top:20%">
+    <div style="width:800px;height:800px;padding-top:26%">
     <div class="대화" id="일">
-    <p  >어머, 감사합니다. </p>
-  </div>
-  <div class="대화" id="이">
-    <p  >저 대신 꽃말을 찾아주신 건가요?</p>
+    <p  >무슨 일이신지요? </p>
   </div>
 
     <div  class="선택지"  id="동네" style="margin-right: 20%;    height: 50px !important;
@@ -36,40 +32,46 @@ $('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
     padding-bottom: 22px !important;"
     onclick="$('#대화1').css({visibility:'hidden'}).animate({opacity:0}, 1000);
     $('#대화2').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#삼').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-    $('#사').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-">동네의 과거를 묻는다.</div>
+    $('#이').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+    $('#삼').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+    $('#사').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">옛날에 관해서 묻는다.</div>
 
 <div  class="선택지"  id="사고" style=" height: 50px !important;
 width: 90px !important;    padding-top: 38px !important;
     padding-bottom: 12px !important;  top: 291px;
     left: 342px;"
 onclick="$('#대화1').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-$('#대화10').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#대화7').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
 $('#십육').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
 $('#십칠').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-">사고</div>
+$('#십팔').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">정작가</div>
 
 <div  class="선택지" id="꽃집" style=" height: 50px !important;
 width: 90px !important;padding-top: 28px !important;
 padding-bottom: 22px !important;"
 onclick="$('#대화1').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-$('#대화6').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-$('#구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-$('#십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-">꽃집의 과거를 묻는다.</div>
+$('#대화5').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+$('#십일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#십이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#십삼').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+">사고에 관해서 묻는다.</div>
   </div>
   </div>
 
   <div class="말풍선" id="대화2" >
-    <div style="width:800px;height:800px;padding-top:20%">
-    <div class="대화" id="삼">
-    <p  >이 동네는 사람 살기 좋은 동네였어요.</p>
+    <div style="width:800px;height:800px;padding-top:18%">
+    <div class="대화" id="이">
+    <p  >옛날 이 동네 말인가요?</p>
+  </div>
+  <div class="대화" id="삼">
+    <p  >아무래도 10년쯤 한 자리에서 장사하다 보니,</p>
   </div>
   <div class="대화" id="사">
-    <p  >그건 지금도 마찬가지고요.</p>
+    <p  >이 사람, 저 사람 친해지기 마련이죠.</p>
   </div>
-    <div class="선택지" style="margin-top: 3%;"
+    <div class="선택지"  
     onclick="$('#대화2').css({visibility:'hidden'}).animate({opacity:0}, 1000);
     $('#대화3').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
     $('#오').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
@@ -82,184 +84,109 @@ $('#십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}
   <div class="말풍선" id="대화3" >
     <div style="width:800px;height:800px;padding-top:20%">
     <div class="대화" id="오">
-    <p  >이웃들끼리 서로 돕는 경우도 많고,</p>
+    <p  >유독 기억에 남는 사람이 있다면,</p>
   </div>
   <div class="대화" id="육">
-    <p  >친하기도 가족 같은걸요.</p>
+    <p  >행복 이발소의 국화였어요.</p>
   </div>
-    <div class="선택지" style="margin-top: 3%;"
+    <div class="선택지" style=" height: 50px !important;
+    width: 90px !important;padding-top: 28px !important;
+    padding-bottom: 22px !important;"
     onclick="$('#대화3').css({visibility:'hidden'}).animate({opacity:0}, 1000);
     $('#대화4').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
     $('#칠').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-">다음으로</div>
+    $('#팔').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+    $('#구').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+    $('#십').css({opacity:0, visibility:'visible'}).delay(3500).animate({opacity:1}, 1000);
+">국화에 관해서 묻는다.</div>
   </div>
   </div>
 
   <div class="말풍선" id="대화4" >
-    <div style="width:800px;height:800px;padding-top:25%">
+    <div style="width:800px;height:800px;padding-top:18%; line-height: 18px;">
    
   <div class="대화" id="칠">
-    <p  >그 ‘사고’만 아니었다면, 더 좋았을 텐데요. </p>
+    <p  >그는 참 성격 좋은 사람이었죠.</p>
   </div>
-    <div  class="선택지" style=" margin-top: 5%;"
-    onclick="$('#대화4').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화5').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#팔').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-   ">다음으로</div>
+  <div class="대화" id="팔">
+    <p  >이 거리에서 가장 먼저 가게를 여는 것도,</p>
+  </div>
+  <div class="대화" id="구">
+    <p  >사람들한테 붙임성 있게 인사를 건네는 것도,</p>
+  </div>
+  <div class="대화" id="십">
+    <p  >모두 그였답니다. 동네에서도 아주 유명인이었어요.</p>
+  </div>
+  <div  class="선택지"
+  onclick="$('#대화4').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
+$('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#동네').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#꽃집').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+opena=1;
+if(opena==1&&openb==1){$('#사고').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);}
+ ">돌아가기</div>
   </div>
   </div>
 
-  <div class="속마음" id="대화5">
-    <div style="width:500px;height:500px;padding-top:30% ;    margin-left: 15%;">
-   
-  <div class="대화" id="팔" style="color:white; background-color:black">
-    <p  >말을 잇는 사장님의 얼굴이 조금 씁쓸해 보였다.</p>
+
+  <div class="말풍선" id="대화5" >
+    <div style="width:800px;height:800px;padding-top:18%">
+    <div class="대화" id="십일">
+    <p  >사고라면 역시 3년 전 교통사고를 말씀하시는 걸까요?</p>
   </div>
-    <div  class="선택지" style=" margin-top: 15%;"
+  <div class="대화" id="십이">
+    <p  >그다지 떠올리고 싶은 기억은 아닙니다.</p>
+  </div>
+  <div class="대화" id="십삼">
+    <p  style="font-size: 22px;">소중한 사람들이 한 번에 세상을 떠난 건 참 슬픈 일이었어요.</p>
+  </div>
+    <div class="선택지" 
     onclick="$('#대화5').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
- $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
- $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
- $('#동네').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- $('#꽃집').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- opena=1;
- if(opena==1&&openb==1){$('#사고').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);}
-   ">돌아가기</div>
+    $('#대화6').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+    $('#십사').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+    $('#십오').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+   ">다음으로</div>
   </div>
   </div>
 
   <div class="말풍선" id="대화6" >
     <div style="width:800px;height:800px;padding-top:20%">
-    <div class="대화" id="구">
-    <p  >옛날이야기요?</p>
+    <div class="대화" id="십사">
+    <p  >오지랖 넓은 철물점 사장도, 성격 좋은 이발소 사장도,</p>
   </div>
-  <div class="대화" id="십">
-    <p  >그렇게 재미있는 얘기를 들려드릴 수는 없을 것 같아요.</p>
+  <div class="대화" id="십오">
+    <p  >모두 그렇게 갈 인물들은 아니었는데 말이죠.</p>
   </div>
-    <div class="선택지" style="margin-top: 3%;"
-    onclick="$('#대화6').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화7').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#십일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-    $('#십이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-   ">다음으로</div>
+  <div  class="선택지" style=" margin-top: 3%;"
+  onclick="$('#대화6').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
+$('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+$('#동네').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+$('#꽃집').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+openb=1;
+if(opena==1&&openb==1){$('#사고').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);}
+ ">돌아가기</div>
   </div>
   </div>
+
 
   <div class="말풍선" id="대화7" >
-    <div style="width:800px;height:800px;padding-top:20%">
-    <div class="대화" id="십일">
-    <p  >제가 꽃집을 시작하기 이전에 이곳은 철물점이었어요.</p>
-  </div>
-  <div class="대화" id="십이">
-    <p  >운영을 안 한 지 제법 오래됐었어요.</p>
-  </div>
-    <div class="선택지" style="margin-top: 3%;"
-    onclick="$('#대화7').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화8').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#십삼').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-    $('#십사').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-   ">다음으로</div>
-  </div>
-  </div>
-
-  <div class="말풍선" id="대화8" >
-    <div style="width:800px;height:800px;padding-top:20%">
-    <div class="대화" id="십삼">
-    <p  >옆집이 이발소였을 당시에 서로 친했다고 들었어요.</p>
-  </div>
-  <div class="대화" id="십사">
-    <p  >하지만 그때 사장님이 큰 ‘사고’가 있어서….</p>
-  </div>
-    <div class="선택지" style="margin-top: 3%;"
-    onclick="$('#대화8').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화9').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#십오').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-   ">다음으로</div>
-  </div>
-  </div>
-
-  <div class="속마음" id="대화9">
-    <div style="width:500px;height:500px;padding-top:30% ;    margin-left: 15%;">
-   
-  <div class="대화" id="십오" style="color:white; background-color:black">
-    <p  >사장님의 안색이 어두워졌다.</p>
-  </div>
-    <div  class="선택지" style=" margin-top: 15%;"
-    onclick="$('#대화9').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
- $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
- $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
- $('#동네').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- $('#꽃집').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
-openb=1;
-if(opena==1&&openb==1){$('#사고').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);}
-   ">돌아가기</div>
-  </div>
-  </div>
-
-  <div class="말풍선" id="대화10" >
-    <div style="width:800px;height:800px;padding-top:20%">
+    <div style="width:800px;height:800px;padding-top:20%;line-height: 50px;">
     <div class="대화" id="십육">
-    <p  >이제 3년 정도 됐네요.</p>
+    <p  >아마 옆 카페 ‘정작가’를 찾아가시면,</p>
   </div>
   <div class="대화" id="십칠">
-    <p  >이 사거리에서 교통사고가 일어난 지요.</p>
+    <p  >당시 이야기를 들을 수 있을 거예요.</p>
   </div>
-    <div class="선택지" style="margin-top: 3%;"
-    onclick="$('#대화10').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화11').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#십팔').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-    $('#십구').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
-   ">다음으로</div>
+  <div class="대화" id="십팔">
+    <p  >[키워드 <span style="color: red;"><정작가></span>를 얻었습니다.]</p>
   </div>
-  </div>
-
-  <div class="말풍선" id="대화11" >
-    <div style="width:800px;height:800px;padding-top:20%">
-    <div class="대화" id="십팔">
-    <p  >운이 좋지 않았어요.</p>
-  </div>
-  <div class="대화" id="십구">
-    <p  >그렇게밖에 말할 수가 없었어요.</p>
-  </div>
-    <div class="선택지" style="margin-top: 3%;"
-    onclick="$('#대화11').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-    $('#대화12').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-    $('#이십').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
-   ">다음으로</div>
+  
   </div>
   </div>
 
 
-  <div class="속마음" id="대화12">
-    <div style="width:500px;height:500px;padding-top:30% ;    margin-left: 15%;">
-   
-  <div class="대화" id="이십" style="color:white; background-color:black">
-    <p  >꽃집 사장님은 더는 말을 잇지 않았다.</p>
-  </div>
-    <div  class="선택지" style=" margin-top: 15%;"
-    onclick="$('#대화12').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-$('#대화13').css({visibility:'visible'}).animate({opacity:1}, 1000);
- $('#이십일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
- $('#이십이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
- $('#이십삼').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- ">다음으로</div>
-  </div>
-  </div>
-
-
-  <div class="말풍선" id="대화13">
-    <div style="width:800px;height:800px;padding-top: 22%;">
-    <div class="대화" id="이십일">
-    <p   >‘따끈따끈 베이커리’에 가보시는 건 어떠실까요?</p>
-  </div>
-  <div class="대화" id="이십이">
-    <p  >옛날부터 있던 곳이라 무언가 알아보시기에는 좋을 거예요.</p>
-  </div>
-  <div class="대화" id="이십삼">
-    <p  >[키워드 <span style="color: red;"><따끈따끈베이커리></span>를 얻었습니다. ]</p>
-  </div>
-  </div>
 
 
   <style>
