@@ -1,0 +1,99 @@
+<html style="overflow: hidden;">
+    <head>
+        <style type="text/css">
+            hr {
+                color: #fff;
+                margin: 10px 7px;
+            }
+
+        
+            .widget-quiz {
+                font-family: sans-serif, Arial;
+                border-radius: 8px;
+                background-color: #fff;
+                border: 3px solid #6758FF;
+                font-size: 13px;
+                font-weight: bold;
+                text-align: center;
+                max-height: 40px;
+                height: 100%;
+            }
+        
+            #timer {
+                width: calc(100% - 20px);
+                height: 50%;
+                padding: 7px 10px;
+                color: red;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            const STATE_INIT = 3000;
+            const STATE_READY = 3001;
+            const STATE_PLAYING = 3002;
+            const STATE_JUDGE = 3004;
+            const STATE_END = 3005;
+            const STATE_CLEAR = 3006;
+        
+            Number.prototype.toHHMMSS = function () {
+                    var sec_num = this;
+                    var hours   = Math.floor(sec_num / 3600);
+                    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+                    var seconds = Math.floor(sec_num - (hours * 3600) - (minutes * 60));
+        
+                    if (hours   < 10) {hours   = "0"+hours;}
+                    if (minutes < 10) {minutes = "0"+minutes;}
+                    if (seconds < 10) {seconds = "0"+seconds;}
+                    return hours+':'+minutes+':'+seconds;
+            };
+                
+            var timerInterval;
+            var timer = 0;
+            
+            window.addEventListener('message', function(e) {
+                var state = e.data.state;
+        
+                if(state == STATE_PLAYING) {
+                    timer = e.data.timer;
+        
+                    clearInterval(timerInterval);
+                    timerInterval = setInterval(function() {
+                        if(--timer >= 0)
+                            document.getElementById('timer').innerText = '남은 시간 ' + timer.toHHMMSS();
+                        else
+                            clearInterval(timerInterval);
+                    }, 1000);
+                    document.getElementById('timer').innerText = '남은 시간 ' + timer.toHHMMSS();
+        
+                }
+                else if(state == STATE_CLEAR) {
+                    timer = e.data.timer;
+        
+                    clearInterval(timerInterval);
+                    timerInterval = setInterval(function() {
+                        if(timer >= 0)
+                            document.getElementById('timer').innerText = '클리어 시간 ' + timer.toHHMMSS();
+                        else
+                            clearInterval(timerInterval);
+                    }, 1000);
+                    document.getElementById('timer').innerText = '클리어 시간 ' + timer.toHHMMSS();
+        
+                }
+        
+                //
+            });
+        
+        </script>
+        <div class="widget-wrapper">
+            <div class="widget-quiz">
+                <div id="timer">
+                    -
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
