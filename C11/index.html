@@ -14,12 +14,65 @@
 
 </head>
 
-<body onload="
-$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
- $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
- $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
- $('#주문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
- $('#질문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);">
+<body onload="$('#대화0').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);">
+
+<div id="대화0" style="width: 750px;
+height: 480px;
+border: 5px solid;
+border-radius: 30px;
+background-color: #eee">
+  <img src="./첫문제.png" style="width: 750px;">
+  <form name="frmtwo" onsubmit="functwo();return false;" style="
+  position: absolute;
+  left: 312px;
+  width: 134px;
+  top: 420px;
+  ">
+    <input  onkeyup='printNametwo()' onsubmit="return false;functwo();"
+    name="nametwo"
+    type="text" id="answertwo" size="10" style="
+background-image: url(./답.png);
+  left: -86px;
+  top: -5px;
+  position: absolute;
+  height: 60px;
+  width: 200px;
+  background-size: cover;
+  background-color: rgba(0,0,0,0);
+  text-align: center;
+  font-family: '폰트';
+  border: none;
+  padding-top: 5px;
+  outline: none;
+  " autofocus value="이곳에 정답 입력"
+  onfocus="javascript:get_Nametwo();">
+    <button type="button" onclick="functwo()" style="
+  cursor: pointer;
+  background-image: url(./동그라미.png);
+  position: absolute;
+  left: 125px;
+  height: 57px;
+  width: 70px;
+  background-size: cover;
+  background-color: rgba(0,0,0,0);
+  text-align: center;
+  font-family: '폰트';
+  border: none;
+  ">확인</button>
+
+<script type="text/javascript">
+document.forms[0].id.focus();
+document.forms[0].id.select();
+</script>
+    </form>
+    <input style="visibility: hidden;">
+
+  </div>
+
+
+
+
+
 
 
   <div class="말풍선" id="대화1" >
@@ -431,6 +484,24 @@ background-image: url(./답.png);
     </div>
 
 
+
+    <div class="말풍선" id="대화17" >
+      <div style="width:800px;height:800px;padding-top:20%">
+     
+    <div class="대화" id="삼십구">
+      <p  ><div id='result' style="display: contents;"></div>...? </p>
+    </div>
+    <div class="대화" id="사십">
+      <p  >갑자기 그게 무슨 말이죠...? </p>
+    </div>
+      <div  class="선택지" style=" margin-top: 5%;"
+      onclick="$('#대화17').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화0').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+ ">돌아가기</div>
+    </div>
+    </div>
+
+
   <style>
     .말풍선 {
       text-align: center;
@@ -493,6 +564,11 @@ background-image: url(./답.png);
     }
 
 
+    #대화0 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
 
     #대화1 {
       visibility:hidden;
@@ -578,6 +654,16 @@ background-image: url(./답.png);
       position: absolute;
       top: 0px;
     }
+    #대화16 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화17 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
 
     @font-face {
       font-family: '폰트';
@@ -630,8 +716,9 @@ var str = document.frm.answer.value;
 
 if(str=="") {
   $('#대화10').css({visibility:'hidden'}).animate({opacity:0}, 1000);
-  $('#대화16').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
-  $('#삼십팔').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#대화11').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#이십사').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#이십오').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
 }
 
   if(str == "소실"){
@@ -650,9 +737,49 @@ if(str=="") {
   }
 }
 
+
+
+function functwo() {
+var str = document.frmtwo.answertwo.value;
+
+if(str=="") {
+  $('#대화0').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화17').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#삼십구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#사십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+}
+
+  if(str == "목숨"){
+    $('#대화0').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+$('#대화1').css({visibility:'visible'}).animate({opacity:1}, 1000);
+ $('#일').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+ $('#이').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+ $('#주문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+ $('#질문').css({opacity:0, visibility:'visible'}).delay(2500).animate({opacity:1}, 1000);
+
+  }
+  else{
+    $('#대화0').css({visibility:'hidden'}).animate({opacity:0}, 1000);
+  $('#대화17').css({opacity:0, visibility:'visible'}).animate({opacity:1}, 1000);
+  $('#삼십구').css({opacity:0, visibility:'visible'}).delay(500).animate({opacity:1}, 1000);
+  $('#사십').css({opacity:0, visibility:'visible'}).delay(1500).animate({opacity:1}, 1000);
+  }
+}
+
+
+
+
+
 function printName() {
 
 const name = document.getElementById('answer').value;
+
+document.getElementById("result").innerText = name;
+
+}
+function printNametwo() {
+
+const name = document.getElementById('answertwo').value;
 
 document.getElementById("result").innerText = name;
 
@@ -661,6 +788,9 @@ document.getElementById("result").innerText = name;
 
 function get_Name(){
 document.frm.name.value='';
+}
+function get_Nametwo(){
+document.frmtwo.nametwo.value='';
 }
   </script>
 
