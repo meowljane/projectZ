@@ -1,0 +1,102 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+h1{
+    text-align: center;
+    color: black;
+}
+.invisible {
+    opacity: 0;
+}
+
+#container_Lv0 {
+    position: absolute;
+    width: 35em;
+    margin: 0 auto;
+    border: 12px solid black;
+    overflow: hidden;
+    border-radius: 1em;
+}
+#container_Lv1 {
+    display: flex;
+    min-width: fit-content;
+}
+    .container_Lv2 {
+        position: relative;
+        height: 30em;
+        width: 35em;
+        background-color: rgba(255, 255, 255, 0.707)
+    }
+    .container_Lv2 img{
+        user-select: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(calc(-50%)) translatey(calc(-50%));
+        max-height: 30em;
+        max-width: 35em;
+    }
+
+#next_Btn_div {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(calc(-50%));
+    background-color: white;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    border-radius: 2em;
+    transition: opacity 0.3s ease-in-out;
+}
+    #next_Btn_div svg{
+        transform: translateX(0.1em) translateY(0.1em);
+    }
+    #next_Btn_div:active {
+        transform: translateY(calc(-50%)) scale(0.9);
+        box-shadow: 1px 1px 2px black;
+    }
+#prev_Btn_div {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(calc(-50%));
+    background-color: white;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    border-radius: 2em;
+    transition: opacity 0.3s ease-in-out;
+}
+    #prev_Btn_div svg{
+        transform: translateX(-0.1em) translateY(0.1em);
+    }
+    #prev_Btn_div:active {
+        transform: translateY(calc(-50%)) scale(0.9);
+        box-shadow: 1px 1px 2px black;
+    }
+
+#radio_Btns_container {
+    position:absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80%;
+    transition: opacity 0.3s ease-in-out;
+}
+.radio_Btn_div {
+    margin-left: 0.3em;
+    margin-right: 0.3em;
+    cursor: pointer;
+}
