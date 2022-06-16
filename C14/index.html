@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>dialogue14</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/libs-0c9dbba-210529120220.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/bezier.min.js"></script>
+  <script src="https://anseki.github.io/plain-draggable/js/path-data-polyfill.js"></script>
+
+</head>
+
+<body onload="
+$('#대화1').fadeIn(1000);">
+
+
+  <div class="말풍선" id="대화1" >
+    <div style="width:800px;height:800px;padding-top:26%">
+    <div class="대화" id="일">
+    <p  >사자의 물건을 떠올렸다.</p>
+  </div>
+  <div class="대화" id="이">
+    <p  >사자는 어떤 의미를 전달하고 싶었을까? </p>
+  </div>
+
+    <div  class="선택지"  style="margin-top:3%;"
+    onclick="$('#대화1').fadeOut(1000);$('#대화2').fadeIn(1000);">다음으로</div>
+  </div>
+  </div>
+
+
+
+  <div class="말풍선" id="대화2" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화" id="육" style="font-size: 15px; margin-top: -6%;">
+      <p  >(물건을 자세히 보려면 마우스를 올려주세요)</p>
+    </div>
+  <div class="대화"   style="font-size: 15px;">
+    <p  >주의깊게 읽고 의미를 찾아보자.</p>
+  </div>
+
+
+    <div class="선택지"  style="height: 19px;
+    width: 47px;
+    margin-top: 1%;
+    font-size: 13px;
+    padding-top: 22px;
+    padding-bottom: 22px;" 
+    onclick="$('#대화2').fadeOut(1000);$('#대화3').fadeIn(1000);
+   ">다음으로</div>
+  </div>
+  </div>
+
+
+ 
+ 
+  <div class="말풍선" id="대화3" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+      <div class="대화"   style="font-size: 15px; margin-top: -6%;">
+    <p  ><span style="color:red">'사자'</span>와 <span style="color:red">'딸'</span>은 사람들의 머리를 <span style="color:red">'잘라'</span>줬다.</p>
+  </div>
+  <div class="대화"   style="font-size: 15px;">
+    <p  >서로 간의 <span style="color:red">'사랑'</span>과 관심이 담긴 <span style="color:red">'대화'</span>가 필요했을 것이다.</p>
+  </div>
+
+  <div class="선택지"  style="height: 19px; margin-right: 15%;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화3').fadeOut(1000);$('#대화2').fadeIn(1000);
+ ">이전으로</div>
+  <div class="선택지"  style="height: 19px;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화3').fadeOut(1000);$('#대화4').fadeIn(1000);
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+ 
+  <div class="말풍선" id="대화4" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+      <div class="대화"   style="font-size: 15px; margin-top: -2%;">
+    <p  ><span style="color:red">'사자'</span>는 매일같이 사람들의 머리를 <span style="color:red">'잘라'</span>주었다.</p>
+  </div>
+
+  <div class="선택지"  style="height: 19px; margin-right: 15%;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화4').fadeOut(1000);$('#대화3').fadeIn(1000);
+ ">이전으로</div>
+  <div class="선택지"  style="height: 19px;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화4').fadeOut(1000);$('#대화5').fadeIn(1000);
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+  <div class="말풍선" id="대화5" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+      <div class="대화"   style="font-size: 15px; margin-top: -2%;">
+    <p  ><span style="color:red">'사자'</span>는 매일 <span style="color:red">'딸'</span>과 <span style="color:red">'대화'</span>를 나눴다.</p>
+  </div>
+
+  <div class="선택지"  style="height: 19px; margin-right: 15%;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화5').fadeOut(1000);$('#대화4').fadeIn(1000);
+ ">이전으로</div>
+  <div class="선택지"  style="height: 19px;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화5').fadeOut(1000);$('#대화6').fadeIn(1000);
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+  <div class="말풍선" id="대화6" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+      <div class="대화"   style="font-size: 15px; margin-top: -2%;">
+    <p  ><span style="color:red">'사자'</span>와 <span style="color:red">'딸'</span>은 단둘이서 한집에 살았다.</p>
+  </div>
+
+  <div class="선택지"  style="height: 19px; margin-right: 15%;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화6').fadeOut(1000);$('#대화5').fadeIn(1000);
+ ">이전으로</div>
+  <div class="선택지"  style="height: 19px;
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;" 
+  onclick="$('#대화6').fadeOut(1000);$('#대화7').fadeIn(1000);
+ ">다음으로</div>
+  </div>
+  </div>
+
+
+  <div class="말풍선" id="대화7" >
+    <div style="width:800px;height:800px;padding-top:19%">
+      <div class="대화 물건 좌"     style="display: contents;">
+      <img src="./OBJECT_X자.png" style="width: 200px; height:200px;">
+    </div>
+    <div class="대화 물건 우"  style="display: contents;">
+      <img src="./OBJECT_편지봉투.png" style="width: 200px; height:200px;">
+    </div>
+      <div class="대화"   style="font-size: 15px; margin-top: -6%;">
+    <p  >만약 <span style="color:red">'사자'</span>가 <span style="color:red">'딸'</span>에게 <span style="color:red">'대화'</span>를 한다면, </p>
+  </div>
+  <div class="대화"   style="font-size: 15px; margin-top: -1%;">
+    <p  >머리를 <span style="color:red">'잘라'</span>주는 일을 하게 된 걸 기꺼워하지 않을까?  </p>
+  </div>
+  <div class="대화"   style="font-size: 15px; margin-top: -1%;">
+    <p  ><span style="color:red">'사자'</span>인 자신을 보고 말이다.</p>
+  </div>
+  <div class="선택지"  style="height: 19px; 
+  width: 47px;
+  font-size: 13px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  margin-top: -1%;" 
+  onclick="$('#대화7').fadeOut(1000);$('#대화6').fadeIn(1000);
+ ">이전으로</div>
+  </div>
+  </div>
+
+
+
+
+  <style>
+.물건 img {
+  transition: all 0.2s linear;
+}
+.좌:hover img {
+  transform: scale(3) translateX(35px);
+
+}
+.우:hover img {
+  transform: scale(3)translateX(-35px);
+}
+
+    .말풍선 {
+      text-align: center;
+      width: 800px;
+      height: 562px;
+      display: block;
+      background-size: 800px 635px;
+      background-image: url(./말풍선.png);
+    }
+
+    .속마음 {
+      background-size: cover;
+      background-image: url(./속마음.png);
+      width: 700px;
+      height: 700px;
+      display: block;
+      text-align: center;
+    }
+
+
+    .대화 {
+      text-align: center;
+    z-index: 4;
+    font-family: 폰트;
+    font-size: 23px;
+    margin: 0 auto;
+    width: fit-content;
+    color: black
+}
+
+
+    .선택지 {
+      color: black;
+      display: inline-block;
+      text-align: center;
+      background-size: cover;
+      background-image: url(./동그라미.png);
+      height: 24px;
+      width: 60px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-family: '폰트';
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+    }
+
+
+    .선택지:hover {
+      cursor: pointer;
+      animation-name: bounce;
+      -moz-animation-name: bounce;
+    }
+
+
+
+    #대화1 {
+      display: block;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화2 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화3 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화4 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+
+    #대화5 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+    #대화6 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+    #대화7 {
+      display: none;
+      position: absolute;
+      top: 0px;
+    }
+    #대화8 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화9 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화10 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #사고 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화11 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화12 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+    #대화13 {
+      visibility:hidden;
+      position: absolute;
+      top: 0px;
+    }
+
+    @font-face {
+      font-family: '폰트';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoDPPA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100%,
+      20%,
+      50%,
+      80% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0)
+      }
+
+      40% {
+        -webkit-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        transform: translateY(-15px)
+      }
+
+      60% {
+        -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+        transform: translateY(-8px)
+      }
+    }
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script src="./script.js"></script>
+  <script>
+
+    var opena = 0;
+    openb = 0;
+
+
+  </script>
+</body>
+
+</html>
