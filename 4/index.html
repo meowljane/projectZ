@@ -7,7 +7,13 @@
   <div class="틀"></div>
   <button id="erase" onclick="location.reload();">
     전체 지우기 버튼</button>
-  <div class="box" id="d111"></div>
+
+
+
+  
+
+
+<div class="box" id="d111"></div>
   <div class="box move" id="d112"></div>
   <div class="box" id="d121"></div>
   <div class="box move" id="d122"></div>
@@ -49,6 +55,19 @@
   <div class="box" id="green1"></div>
   <div class="box move" id="green2"></div>
 
+  <div id="안내문" style="background-color: rgb(86,83,78);
+  padding: 33px 3px 3px 3px;
+  width: 300px;
+  text-align: center;
+  height: 21px;
+  border-radius: 20px;
+  margin-left: 16%;
+  position: absolute;
+  margin-top: -3.5%;
+  font-family: '폰트';
+  border: 9px solid rgb(71,68,61);
+  color: rgb(222,212,194);
+  font-weight: bolder;">알맞은 단어를 드래그하여 이어주세요.</div>
 
   <svg height="1000" width="1000">
     <line class="line" id="line11" x1="0" y1="0" x2="0" y2="0" style="position:absolute" />
@@ -86,9 +105,23 @@
 </body>
 
 <style>
-
+@font-face {
+    font-family: '폰트';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 #erase{
-position : absolute;
+  left: 457px;
+    top: 97px;
+  font-family: '폰트';
+  position: absolute;
+  background-color: rgb(118,151,166);
+    border: 5px solid rgb(80, 111, 122);
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(241,243,229);
+    font-weight: bolder;
 }
 
   .box {
@@ -312,12 +345,6 @@ position : absolute;
       portPosition = port[0].getBoundingClientRect(),
       snapped;
 
-    port[0].style.width = bBox.width + 'px';
-    port[0].style.height = bBox.height + 'px';
-    portPosition = {
-      left: portPosition.left + window.pageXOffset,
-      top: portPosition.top + window.pageYOffset
-    };
     var snapshot =
       [{ x: 252, y: 151, center: true },
       { x: 274, y: 151, center: true },
@@ -344,11 +371,10 @@ position : absolute;
 
     var draggable = new PlainDraggable($('#red2')[0], {
       onDrag: function (moveTo) {
-        var value = this.left;
+
         port = $("#red1");
         target = $("#red2");
         const $line = $("#line");
-        portPosition = port[0].getBoundingClientRect()
         animMode(!!(snapped = moveTo.snapped));
         $line.css({ "opacity": "0.7" })
         const x1 = port.offset().left + port.width() / 2 - padding;
@@ -360,17 +386,21 @@ position : absolute;
         $line.attr("x2", x2);
         $line.attr("y2", y2);
       },
-
       snap: snapshot
       ,
-      onDragEnd: function () {
+      onDragEnd: function erase() {
         if (!snapped) {
           $("#line").css({ "opacity": "0" });
-          this.left = portPosition.left;
-          this.top = portPosition.top;
+          this.left = 366.5;
+          this.top = 260.5;
+          
         }
+
       }
+      
     });
+
+    
     var draggable = new PlainDraggable($('#orange2')[0], {
       onDrag: function (moveTo) {
         var value = this.left;
