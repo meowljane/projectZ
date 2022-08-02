@@ -100,3 +100,11 @@ h1{
     margin-right: 0.3em;
     cursor: pointer;
 }
+
+body{
+ -ms-overflow-style: none;
+ }
+
+::-webkit-scrollbar {
+  display: none;
+}
