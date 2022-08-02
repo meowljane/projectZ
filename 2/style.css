@@ -2,6 +2,14 @@
   --poster-color: #ffffff00;
 }
 
+body{
+ -ms-overflow-style: none;
+ }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   font-family: "Roboto", sans-serif;
